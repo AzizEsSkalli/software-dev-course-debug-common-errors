@@ -24,22 +24,27 @@ Think about which debugging methods you found most useful and how you might appl
 // Description:
 // This program is intended to display a simple prompt in the console but fails to run.
 
-console.log("Welcome to the bootcamp
+console.log("Welcome to the bootcamp");
 
-// What’s Wrong?
+// This program contains Syntax errors : Missing quote,closing parenthesis and semicolom.
 
 
 // Program B
 // Description:
 // This code attempts to multiply each number in an array by 2 and display the results. However, it crashes at runtime.
 
-let numbers = [2, 4, "eight"];
+let numbers = [2, 4, 8];
 for (let i = 0; i < numbers.length; i++) {
   let doubled = numbers[i] * 2;
   console.log(doubled);
 }
 
-// What’s Wrong?
+/*
+This program contains Runtime error: The operation of multiplication by 2 for the elements of
+array (numbers) will be successfuly done for the first and second elements. But for the third element
+NaN will be logged because it's a string not a number.
+For fix it we need to change the string "eight" to number 8.
+*/
 
 
 
@@ -50,7 +55,7 @@ for (let i = 0; i < numbers.length; i++) {
 function isPrime(num) {
   if (num < 2) return false;
   for (let i = 2; i < num; i++) {
-    if (num % i === 0) {
+    if (num % i !== 0) {
       return true;  // Supposed to indicate num is NOT prime
     }
   }
@@ -59,4 +64,7 @@ function isPrime(num) {
 
 console.log(isPrime(7)); // Expected true but gets false
 
-// What’s Wrong?
+/* 
+This program contains logic error : To get true in the output we need to change the condition 
+(num % i === 0) to (num % i !== 0).
+*/
